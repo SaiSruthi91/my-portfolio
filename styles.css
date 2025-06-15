@@ -641,7 +641,6 @@ img[alt="Data Decision"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
   max-width: 900px;
   margin: 0 auto;
   flex-direction: row-reverse;
@@ -699,7 +698,7 @@ img[alt="Data Decision"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px; /* same gap as why-me-content */
+  gap: 385px; /* same gap as why-me-content */
   max-width: 900px;
   margin: 0 auto; /* center it like why-me-content */
 }
@@ -738,16 +737,18 @@ img[alt="Data Decision"] {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* MATCHED with Why Me */
 }
 
+
 /* Responsive for smaller screens */
 @media (max-width: 768px) {
   .hobbies-content {
     flex-direction: column;
     text-align: center;
+    gap: 20px; /* Optional: for consistent vertical spacing */
   }
 
   .dance-animation {
     order: 0;
-    margin-bottom: 20px;
+    margin-bottom: 50px; /* 👈 Adds space between image and list */
   }
 
   .hobbies-list {
