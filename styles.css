@@ -699,7 +699,9 @@ img[alt="Data Decision"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 400px; /* increased from 30px or 40px */
+  gap: 40px; /* same gap as why-me-content */
+  max-width: 900px;
+  margin: 0 auto; /* center it like why-me-content */
 }
 
 
@@ -732,9 +734,8 @@ img[alt="Data Decision"] {
 
 .dance-animation img {
   width: 130px;
-  height: auto;
-  border-radius: 0;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* MATCHED with Why Me */
 }
 
 /* Responsive for smaller screens */
