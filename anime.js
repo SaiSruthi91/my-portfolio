@@ -24,3 +24,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", checkAnimation);
 });
+
+  // ----------------------------
+  // Tab switching functionality
+  // ----------------------------
+
+  function showTab(tabName) {
+    // Hide all tab contents
+    document.querySelectorAll('.tab-content').forEach(tab => {
+      tab.style.display = 'none';
+    });
+
+    // Remove active class from all buttons
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
+
+    // Show selected tab content
+    document.getElementById(tabName).style.display = 'block';
+
+    // Add active class to clicked button
+    event.target.classList.add('active');
+  }
+
+  // Set default tab to 'projects'
+  showTab('projects');
+
+  // Attach event listeners to tab buttons
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+      showTab(this.textContent.trim().toLowerCase());
+    });
+  });
+
+function showTab(tabId) {
+  const tabs = document.querySelectorAll('.tab-content');
+  const buttons = document.querySelectorAll('.tab-btn');
+
+  tabs.forEach(tab => {
+    tab.style.display = 'none';
+  });
+
+  buttons.forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  document.getElementById(tabId).style.display = 'block';
+  event.target.classList.add('active');
+}
+
