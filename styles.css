@@ -79,21 +79,32 @@ body {
   overflow: hidden;    /* Prevents icons from spilling outside */
   z-index: 1;
 }
+/* Update the floating icon styles */
+.floating-icon {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  opacity: 0.8;
+  will-change: transform;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-out;
+  transform-origin: center center;
+  backface-visibility: visible;
+  z-index: 0;
+  filter: drop-shadow(0 0 8px rgba(233, 30, 99, 0.6));
+}
+
+/* Remove the rotate360 animation as we'll handle rotation via JS */
 .floating-bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* So user can still interact with buttons/text */
+  pointer-events: none;
+  overflow: hidden;
   z-index: 0;
-}
-
-.floating-icon {
-  position: absolute;
-  width: 60px;
-  opacity: 1;
-  animation: rotate360 20s linear infinite;
+  perspective: 1000px;
 }
 
 /* Rotation Animation */
@@ -313,10 +324,9 @@ html {
   position: relative;
 }
 
-
 .project-item img {
   width: 100%;
-  height: 220px;
+  height: 180px;
   object-fit: cover;
   border-radius: 12px 12px 0 0;
 }
@@ -356,6 +366,46 @@ html {
 .project-desc p {
   margin-bottom: 15px;
 }
+
+.mySwiper {
+  padding: 0 1px;
+  position: relative;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  padding: 0 5px; /* Add this for controlled spacing */
+}
+
+
+.project-item {
+  width: 65%; /* or smaller */
+  margin: 0 auto;
+}
+
+
+.swiper-button-prev,
+.swiper-button-next {
+color: #800080;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.swiper-button-prev {
+  left: 0;  /* Now aligned properly within .mySwiper */
+}
+
+.swiper-button-next {
+  right: 0;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: rgb(194, 0, 152) !important;
+  font-size: 24px; /* optional: change size */
+}
+
 
 /* Optional tech-tag styling */
 .technologies-used {
