@@ -829,16 +829,11 @@ img[alt="Data Decision"] {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#contact h2 {
-  font-size: 1.7rem;
-  margin-bottom: 16px;
-  font-weight: 700;
-  color: #e8e1e7;
-}
+
 
 .contact-label {
   font-weight: bold;
-  font-size: 1.05rem;
+  font-size: 1 rem;
   color: #ffffff;
   margin-bottom: 6px;
 }
